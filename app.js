@@ -71,10 +71,33 @@ function createBookCard(book) {
     const bookCard = document.createElement("div");
     bookCard.setAttribute("class", "book-card");
 
-    //creating heading of the card
+    const bookInfo = document.createElement("div");
+    bookInfo.setAttribute("class", "book-info");
+
     const bookName = document.createElement("h2");
     bookName.textContent = book.getName();
-    bookCard.appendChild(bookName);
+    bookInfo.appendChild(bookName);
+
+    const author = document.createElement("h3");
+    author.textContent = book.getAuthor();
+    bookInfo.appendChild(author);
+
+    const genre = document.createElement("p");
+    genre.textContent = book.getGenre();
+    bookInfo.appendChild(genre);
+
+    const pageCount = document.createElement("p");
+    pageCount.textContent = book.getPageCount() + " pages";
+    bookInfo.appendChild(pageCount);
+
+    bookCard.appendChild(bookInfo);
+
+    if (book.getStatus != 0) {
+        const status = document.createElement("button");
+        status.setAttribute("id", "status-button");
+        status.textContent = "Not Started";
+        bookCard.appendChild(status);
+    }
 
     return bookCard;
 }
