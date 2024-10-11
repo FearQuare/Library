@@ -1,12 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Londrina+Sketch&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
+    <nav>
+        <img src="images/fear.png" alt="logo">
+        <h1>The Library </h1>
+    </nav>
+    <main>
+        <div class="add-book-card">
+            <h2>Add Book</h2>
+            <button id="add-book"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <title>book-plus</title>
+                    <path
+                        d="M13 19C13 20.1 13.3 21.12 13.81 22H6C4.89 22 4 21.11 4 20V4C4 2.9 4.89 2 6 2H7V9L9.5 7.5L12 9V2H18C19.1 2 20 2.89 20 4V13.09C19.67 13.04 19.34 13 19 13C15.69 13 13 15.69 13 19M20 18V15H18V18H15V20H18V23H20V20H23V18H20Z" />
+                </svg></button>
+        </div>
+    </main>
+    <footer>Footer</footer>
+
+    <div id="book-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add a New Book</h2>
+            <form id="book-form">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required><br>
+                <label for="author">Author</label>
+                <input type="text" id="author" name="author" required><br>
+                <label for="genre">Genre</label>
+                <input type="text" id="genre" name="genre" required><br>
+                <label for="pageCount">Page Count</label>
+                <input type="number" id="pageCount" name="pageCount" required><br>
+                <label for="status">Status</label>
+                <select id="status" name="status">
+                    <option value="0">Not Started</option>
+                    <option value="1">Reading</option>
+                    <option value="2">Dropped</option>
+                    <option value="3">Read</option>
+                </select><br>
+                <label for="currentPage">Current Page</label>
+                <input type="number" id="currentPage" name="currentPage" value="0"><br><br>
+                <button type="submit">Add Book</button>
+            </form>
+        </div>
+    </div>
+
     <script src="app.js"></script>
 </body>
+
 </html>
